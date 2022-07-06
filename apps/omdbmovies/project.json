@@ -5,7 +5,9 @@
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/apps/omdbmovies",
         "index": "apps/omdbmovies/src/index.html",
@@ -17,7 +19,9 @@
           "apps/omdbmovies/src/favicon.ico",
           "apps/omdbmovies/src/assets"
         ],
-        "styles": ["apps/omdbmovies/src/styles.scss"],
+        "styles": [
+          "apps/omdbmovies/src/styles.scss"
+        ],
         "scripts": []
       },
       "configurations": {
@@ -57,10 +61,12 @@
       "executor": "@angular-devkit/build-angular:dev-server",
       "configurations": {
         "production": {
-          "browserTarget": "omdbmovies:build:production"
+          "browserTarget": "omdbmovies:build:production",
+          "ssl": true
         },
         "development": {
-          "browserTarget": "omdbmovies:build:development"
+          "browserTarget": "omdbmovies:build:development",
+          "ssl": true
         }
       },
       "defaultConfiguration": "development"
@@ -82,7 +88,9 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/omdbmovies"],
+      "outputs": [
+        "coverage/apps/omdbmovies"
+      ],
       "options": {
         "jestConfig": "apps/omdbmovies/jest.config.ts",
         "passWithNoTests": true

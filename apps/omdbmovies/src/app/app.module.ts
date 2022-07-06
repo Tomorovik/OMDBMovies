@@ -3,10 +3,10 @@ import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { NxWelcomeComponent } from './nx-welcome.component';
 import { AppConfigService } from './services/app-config.service';
 import { HeaderComponent } from './components/header/header/header.component';
 import { RouterModule } from '@angular/router';
+import { AppRoutingModule } from './app-routing.module';
 
 function initAppConfig(
   appConfigService: AppConfigService,
@@ -16,8 +16,8 @@ function initAppConfig(
 }
 
 @NgModule({
-  declarations: [AppComponent, NxWelcomeComponent, HeaderComponent],
-  imports: [BrowserModule, HttpClientModule, RouterModule],
+  declarations: [AppComponent, HeaderComponent],
+  imports: [AppRoutingModule, BrowserModule, HttpClientModule, RouterModule],
   providers: [
     {
       provide: APP_INITIALIZER,
@@ -28,4 +28,4 @@ function initAppConfig(
   ],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }
