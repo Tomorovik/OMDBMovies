@@ -6,25 +6,26 @@
     .filters-container {
         max-width: const.$max-width;
         margin-inline: auto;
-        background-color: white;
+        background-color: const.$white;
         display: flex;
         flex-direction: row;
         padding: const.$page-padding;
-        border-bottom: 1px solid #bdbdbd;
+        border-bottom: 1px solid const.$greyish2;
 
         > .filter-field {
             width: 100%;
             margin-inline: 1rem;
-            // border: 1px solid red;
 
             ::ng-deep .p-calendar,
             ::ng-deep .p-multiselect {
                 display: flex;
             }
         }
+
         .filter-title {
             display: flex;
         }
+
         .filter-title-input {
             padding-right: 2rem;
             width: 100%;
@@ -34,12 +35,6 @@
         .filter-title-clear {
             right: 0.5rem;
             cursor: pointer;
-        }
-
-        .filters-clear {
-            border: 1px black;
-            display: inline-flex;
-            align-items: center;
         }
     }
 }

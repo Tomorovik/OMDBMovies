@@ -11,7 +11,7 @@
                 <div class="col-6">
                     <div class="row">
                         <img class="movie-details-icon" src="assets/premiere-icon.svg" alt="premiere-icon" />
-                        <div class="col-9 movie-details">
+                        <div class="col-8 movie-details">
                             <div class="movie-details-label">Premiere Date:</div>
                             <span>{{movieDetails.Released}}</span>
                         </div>
@@ -21,7 +21,7 @@
                 <div class="col-6">
                     <div class="row">
                         <img class="movie-details-icon" src="assets/runtime-icon.svg" alt="premiere-icon" />
-                        <div class="col-9 movie-details">
+                        <div class="col-8 movie-details">
                             <div class="movie-details-label">Runtime:</div>
                             <span>{{movieDetails.Runtime}}</span>
                         </div>
@@ -47,7 +47,7 @@
             </div>
         </div>
         <div class="col-sm-4">
-            <img class="col-12" [src]="movieDetails.Poster" alt="moviesPoster" />
+            <img class="col-12" [src]="movieDetails.Poster | posterValidation" alt="moviesPoster" />
         </div>
     </div>
 </div>

@@ -1,12 +1,12 @@
-import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-import { BASE_APP_SETTINGS } from '../models/app-settings.model';
-import { AppConfigService } from './app-config.service';
+import { HttpClient } from "@angular/common/http";
+import { Injectable } from "@angular/core";
+import { Observable } from "rxjs";
 import { take } from "rxjs/operators";
+import { BASE_APP_SETTINGS } from "../../models/app-settings.model";
+import { AppConfigService } from "../app-config.service";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root"
 })
 export class MoviesService {
 
@@ -26,9 +26,9 @@ export class MoviesService {
     return this.httpClient.get<T>(this.apiUrl);
   }
 
-  public getMovie<T>(params?: any): Observable<T> {
-    if (params)
-      return this.httpClient.get<T>(this.apiUrl, { params: params });
+  public getMovie<T>(request: any): Observable<T> {
+    if (request)
+      return this.httpClient.get<T>(this.apiUrl, { params: request });
     return this.httpClient.get<T>(this.apiUrl);
   }
 }

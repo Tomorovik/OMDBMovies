@@ -7,7 +7,10 @@
     "postinstall": "node ./decorate-angular-cli.js && ngcc --properties es2020 browser module main",
     "start": "nx serve",
     "build": "nx build",
-    "test": "nx test"
+    "test": "nx test",
+    "omdb:lint": "nx run omdbmovies:lint",
+    "omdb:build:dev": "nx run omdbmovies:build:development",
+    "omdb:build:release": "nx run omdbmovies:build"
   },
   "private": true,
   "dependencies": {
@@ -21,6 +24,8 @@
     "@angular/router": "14.0.0",
     "@nrwl/angular": "14.3.6",
     "bootstrap": "^5.1.3",
+    "eslint-plugin-import": "2.26.0",
+    "eslint-plugin-unicorn": "43.0.1",
     "primeicons": "5.0.0",
     "primeng": "14.0.0-rc.1",
     "rxjs": "7.4.0",
@@ -55,6 +60,6 @@
     "prettier": "2.6.2",
     "ts-jest": "27.1.4",
     "ts-node": "10.8.0",
-    "typescript": "4.7.2"
+    "typescript": "4.6.4"
   }
 }

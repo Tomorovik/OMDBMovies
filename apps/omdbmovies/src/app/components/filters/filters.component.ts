@@ -1,20 +1,19 @@
-import { ChangeDetectionStrategy, Component, OnDestroy } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
-import { debounceTime, distinctUntilChanged, Subject, takeUntil } from 'rxjs';
-import { FilterData } from '../../models/filter-data.model';
-import { FilterEventService } from '../../services/event/filter-event.service';
+import { ChangeDetectionStrategy, Component, OnDestroy } from "@angular/core";
+import { FormBuilder, FormControl, FormGroup } from "@angular/forms";
+import { debounceTime, distinctUntilChanged, Subject, takeUntil } from "rxjs";
+import { FilterData } from "../../models/filter-data.model";
+import { FilterEventService } from "../../services/event/filter-event.service";
 
 @Component({
-  selector: 'omdbmovies-filters',
-  templateUrl: './filters.component.html',
-  styleUrls: ['./filters.component.scss'],
+  selector: "omdbmovies-filters",
+  templateUrl: "./filters.component.html",
+  styleUrls: ["./filters.component.scss"],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FiltersComponent implements OnDestroy {
   public types: string[] = [
-    'movie',
-    'series',
-    'episode'
+    "movie",
+    "series"
   ];
 
   public form!: FormGroup;
@@ -48,7 +47,7 @@ export class FiltersComponent implements OnDestroy {
   private resetPage(): void {
     this.filterEventService.resetPage();
   }
-  private handleFilters(x ?: number) {
+  private handleFilters(x?: number) {
     const filterData: FilterData = this.getFormData();
     filterData.page = x ?? 1;
     this.filterEventService.setFilterData(filterData);
@@ -56,9 +55,9 @@ export class FiltersComponent implements OnDestroy {
 
   private getFormData(): FilterData {
     return {
-      title: this.form.controls['title'].value ?? null,
-      year: (this.form.controls['year'].value ? new Date(this.form.controls['year'].value).getFullYear().toString() : null),
-      type: this.form.controls['type'].value ? this.form.controls['type'].value?.join(",") : null
+      title: this.form.controls["title"].value ?? null,
+      year: (this.form.controls["year"].value ? new Date(this.form.controls["year"].value).getFullYear().toString() : null),
+      type: this.form.controls["type"].value ? this.form.controls["type"].value?.join(",") : null
     };
   }
 
@@ -80,6 +79,6 @@ export class FiltersComponent implements OnDestroy {
   }
 
   public clearInput(): void {
-    this.form.controls['title'].patchValue(null);
+    this.form.controls["title"].patchValue(null);
   }
 }

@@ -2,7 +2,6 @@
   "$schema": "./node_modules/nx/schemas/workspace-schema.json",
   "version": 2,
   "projects": {
-    "omdbmovies": "apps/omdbmovies",
-    "omdbmovies-e2e": "apps/omdbmovies-e2e"
+    "omdbmovies": "apps/omdbmovies"
   }
 }

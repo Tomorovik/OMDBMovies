@@ -9,8 +9,7 @@
       ],
       "extends": [
         "plugin:@nrwl/nx/angular",
-        "plugin:@angular-eslint/template/process-inline-templates",
-        "plugin:storybook/recommended"
+        "plugin:@angular-eslint/template/process-inline-templates"
       ],
       "parserOptions": {
         "project": "./**/tsconfig*?.json"
@@ -43,7 +42,6 @@
         "@angular-eslint/no-output-rename": "off",
         "@angular-eslint/no-outputs-metadata-property": "error",
         "@angular-eslint/use-pipe-transform-interface": "error",
-        "@typescript-eslint/dot-notation": "error",
         "@typescript-eslint/explicit-member-accessibility": [
           "error",
           {
@@ -175,13 +173,6 @@
       ],
       "rules": {
         "@angular-eslint/template/eqeqeq": "off"
-      }
-    },
-    {
-      "files": ["*.stories.ts"],
-      "rules": {
-        "storybook/prefer-pascal-case": "off",
-        "storybook/default-exports": "off"
       }
     }
   ]

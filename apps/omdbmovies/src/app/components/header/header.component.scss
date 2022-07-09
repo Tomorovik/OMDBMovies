@@ -1,18 +1,19 @@
-@use "./../../../common/constants.scss" as const;
+@use "./../../common/constants.scss" as const;
 
 :host {
     .header-navbar {
         width: 100%;
         color: const.$textgray;
         padding: 1rem;
-        border-bottom: 1px solid #bdbdbd;
+        border-bottom: 1px solid const.$greyish2;
 
         .page-icon {
             font-weight: 600;
-            border: 1px solid grey;
+            border: 1px solid const.$textgray;
             border-radius: 5px;
             padding: 3px;
             margin-right: 10px;
+            background-color: const.$greyish;
             cursor: pointer;
         }
     }

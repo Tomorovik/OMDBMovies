@@ -1,14 +1,12 @@
-import { ChangeDetectionStrategy, Component, Input, OnDestroy, ViewChild } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
-import { Paginator } from 'primeng/paginator';
-import { debounceTime, distinctUntilChanged, skip, Subject, takeUntil } from 'rxjs';
-import { FilterData } from '../../models/filter-data.model';
-import { FilterEventService } from '../../services/event/filter-event.service';
+import { Component, Input, ViewChild } from "@angular/core";
+import { Paginator } from "primeng/paginator";
+import { skip } from "rxjs";
+import { FilterEventService } from "../../services";
 
 @Component({
-  selector: 'omdbmovies-pagination',
-  templateUrl: './pagination.component.html',
-  styleUrls: ['./pagination.component.scss']
+  selector: "omdbmovies-pagination",
+  templateUrl: "./pagination.component.html",
+  styleUrls: ["./pagination.component.scss"]
 })
 export class PaginationComponent {
   @Input() public itemsAmount = 0;
@@ -18,8 +16,7 @@ export class PaginationComponent {
 
   private prevPage = 0;
   constructor(
-    private filterEventService: FilterEventService,
-    private formBuilder: FormBuilder) {
+    private filterEventService: FilterEventService) {
     this.filterEventService.pageResetEvent$.pipe(skip(1))
       .subscribe(() => {
         this.paginator.changePageToFirst(new Event("click"));
@@ -38,7 +35,7 @@ export class PaginationComponent {
 
   private scroll(event: any): void {
     if (this.prevPage !== event.page) {
-      window.scroll({ top: 0, behavior: 'smooth' });
+      window.scroll({ top: 0, behavior: "smooth" });
     }
   }
 
