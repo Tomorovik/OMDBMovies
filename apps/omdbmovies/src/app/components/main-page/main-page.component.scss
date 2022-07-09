@@ -1,0 +1,30 @@
+@use "./../../common/constants.scss" as const;
+
+:host {
+    .page-container {
+        max-width: const.$max-width;
+        margin-inline: auto;
+    }
+    .skeleton-card {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        column-gap: 1rem;
+        .skeleton-card-details {
+            display: grid;
+            grid-template-rows: 1fr 1fr 1fr;
+        }
+    }
+
+    .phrase-placeholder {
+        background-color: #f5f5f5;
+        border-radius: 0.5rem;
+        padding: 1rem;
+        margin-inline: 1rem;
+        display: inline-block;
+        box-shadow: 0px 20px 50px 0 rgba(4, 4, 4, 0.25), 0px 2px 4px 0 rgba(4, 4, 4, 0.25);
+    }
+    omdbmovies-skeleton,
+    omdbmovies-movies-list {
+        padding: 1rem;
+    }
+}

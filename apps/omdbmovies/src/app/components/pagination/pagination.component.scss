@@ -1,0 +1,40 @@
+@use "./../../common/constants.scss" as const;
+
+:host {
+    display: block;
+    padding: const.$page-padding;
+
+    .filters-container {
+        max-width: const.$max-width;
+        margin-inline: auto;
+        background-color: white;
+        display: flex;
+        flex-direction: row;
+        padding: 20px;
+
+        > .filters-field {
+        }
+
+        .filter-title-input {
+            padding-right: 2rem;
+        }
+
+        .filter-title-clear {
+            right: 0.5rem;
+            cursor: pointer;
+        }
+
+        .filters-clear {
+            border: 1px black;
+            display: inline-flex;
+            align-items: center;
+        }
+    }
+}
+
+@media all and (max-width: const.$breakpoint-tablet) {
+    :host {
+        .filters-container {
+        }
+    }
+}

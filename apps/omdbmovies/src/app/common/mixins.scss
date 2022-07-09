@@ -1,0 +1,15 @@
+@mixin wrapContent {
+    word-wrap: break-word;
+    word-break: break-word;
+    text-overflow: ellipsis;
+}
+@mixin textEllipsis($width: 100%) {
+    @include wrapContent;
+    overflow: hidden;
+    white-space: nowrap;
+    width: $width;
+}
+
+@mixin fontWeight($fontWeight: 600) {
+    font-weight: $fontWeight;
+}

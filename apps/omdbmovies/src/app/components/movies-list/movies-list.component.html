@@ -1,1 +1,22 @@
-Lista
+<section class="movies-list-container">
+    <ng-container *ngIf="moviesList">
+        <ng-container *ngFor="let movie of moviesList">
+            <ng-container *ngTemplateOutlet="movieItem;context:{$implicit:movie}"></ng-container>
+        </ng-container>
+    </ng-container>
+</section>
+
+<ng-template #movieItem let-movie>
+    <section class="movie-card">
+        <section>
+            <img class="movie-poster" [src]="movie.Poster | posterValidation" alt="Poster"
+                (click)="navigateToDetails(movie.imdbID)">
+        </section>
+        <section class="movie-details">
+            <div class="movie-title" (click)="navigateToDetails(movie.imdbID)">{{movie.Title}}</div>
+            <span class="movie-year">{{movie.Year }}</span>
+            <div class="movie-type">{{movie.Type | titlecase }}</div>
+        </section>
+    </section>
+
+</ng-template>

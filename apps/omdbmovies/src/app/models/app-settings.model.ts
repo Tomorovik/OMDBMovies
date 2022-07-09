@@ -1,4 +1,3 @@
-export class BASE_APP_SETTINGS {
-    public apikey: string = "";
-    public apiUrl: string = "";
+export interface BASE_APP_SETTINGS {
+    apiUrl: string;
 };

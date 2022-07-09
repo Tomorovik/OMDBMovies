@@ -1,4 +1,4 @@
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -7,7 +7,8 @@ import { AppConfigService } from './services/app-config.service';
 import { HeaderComponent } from './components/header/header/header.component';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
-
+import { HttpErrorHandlerInterceptor } from './interceptors/http-error-handler.interceptor';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 function initAppConfig(
   appConfigService: AppConfigService,
   http: HttpClient
@@ -17,8 +18,13 @@ function initAppConfig(
 
 @NgModule({
   declarations: [AppComponent, HeaderComponent],
-  imports: [AppRoutingModule, BrowserModule, HttpClientModule, RouterModule],
+  imports: [AppRoutingModule, BrowserModule, HttpClientModule, RouterModule, BrowserAnimationsModule],
   providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HttpErrorHandlerInterceptor,
+      multi: true
+    }    ,
     {
       provide: APP_INITIALIZER,
       useFactory: initAppConfig,

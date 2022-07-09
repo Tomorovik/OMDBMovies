@@ -1,0 +1,35 @@
+<omdbmovies-filters></omdbmovies-filters>
+
+<section class="page-container">
+    <ng-container [ngSwitch]="activeLayout">
+        <ng-container *ngSwitchCase="'loading'" [ngTemplateOutlet]="movieSkeleton"></ng-container>
+        <ng-container *ngSwitchCase="'emptyPhrase'" [ngTemplateOutlet]="enterPhrase"></ng-container>
+        <ng-container *ngSwitchCase="'movieList'" [ngTemplateOutlet]="movieList"></ng-container>
+        <ng-container *ngSwitchCase="'noResults'" [ngTemplateOutlet]="noResults"></ng-container>
+        <ng-container *ngSwitchCase="'tooManyResults'" [ngTemplateOutlet]="tooManyResults"></ng-container>
+    </ng-container>
+</section>
+<omdbmovies-pagination [itemsAmount]="moviesList?.totalResults"></omdbmovies-pagination>
+
+<ng-template #enterPhrase>
+</ng-template>
+
+<ng-template #noResults>
+    <p class="phrase-placeholder">
+        No results were found. Try again.
+    </p>
+</ng-template>
+
+<ng-template #tooManyResults>
+    <p class="phrase-placeholder">
+        Too many results were found. Try again with other filters
+    </p>
+</ng-template>
+
+<ng-template #movieList>
+    <omdbmovies-movies-list [moviesList]="moviesList?.Search"></omdbmovies-movies-list>
+</ng-template>
+
+<ng-template #movieSkeleton>
+    <omdbmovies-skeleton></omdbmovies-skeleton>
+</ng-template>

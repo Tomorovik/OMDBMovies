@@ -12,7 +12,7 @@ const routes: Routes = [
       )
   },
   {
-    path: "maintanance",
+    path: "maintenance",
     component: MaintenanceComponent,
   },
   {

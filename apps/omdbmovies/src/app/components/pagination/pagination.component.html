@@ -1,0 +1,3 @@
+<section [hidden]="!itemsAmount">
+    <p-paginator #paginator [rows]="10" [totalRecords]="itemsAmount" [pageLinkSize]="3" (onPageChange)="paginate($event)"></p-paginator>
+</section>

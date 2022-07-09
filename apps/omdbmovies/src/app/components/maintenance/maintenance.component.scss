@@ -1,0 +1,18 @@
+:host{
+    .maintenance_page {
+        background-color: white;
+        display: grid;
+        place-items: center;
+
+        .maintenance_image {
+            width: clamp(200px,50vw, 300px);
+            height: clamp(200px,50vw, 300px);
+            margin: 30px 0;
+            aspect-ratio: 1;
+        }
+
+        .maintenance_description {
+            font-weight: 700;
+        }
+    }
+}

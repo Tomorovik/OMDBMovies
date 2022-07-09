@@ -1,0 +1,21 @@
+<form [formGroup]="form" class="filters-container">
+    <div class="filter-field">
+        <span class="filter-title p-input-icon-left">
+            <i class="pi pi-search"></i>
+            <input class="filter-title-input" type="text" pInputText placeholder="Start by typing search phrase..."
+                formControlName="title" />
+            <i *ngIf="!!form.controls['title'].value" class="filter-title-clear pi pi-times" (click)="clearInput()"></i>
+        </span>
+    </div>
+    <div class="filter-field">
+        <p-calendar formControlName="year" placeholder="Year" view="year" dateFormat="yy"
+            inputId="yearpicker" [showClear]="true">
+        </p-calendar>
+    </div>
+    <div class="filter-field">
+        <p-multiSelect formControlName="type" defaultLabel="Type" [options]="types"
+            [showClear]="true" [showHeader]="false"></p-multiSelect>
+    </div>
+</form>
+<ng-content></ng-content>
+<!-- <pre style="background-color: white;">{{form.valueChanges | async | json}}</pre> -->

@@ -1,1 +1,53 @@
-<p>header works!</p>
+<div *ngIf="isLoading" class="lds-ellipsis">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</div>
+<div *ngIf="movieDetails" class="container movie-details-container">
+    <div class="row">
+        <div class="col-md-6 col-sm-8 offset-md-2">
+            <div class="row additional-info">
+                <div class="col-6">
+                    <div class="row">
+                        <img class="movie-details-icon" src="assets/premiere-icon.svg" alt="premiere-icon" />
+                        <div class="col-9 movie-details">
+                            <div class="movie-details-label">Premiere Date:</div>
+                            <span>{{movieDetails.Released}}</span>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-6">
+                    <div class="row">
+                        <img class="movie-details-icon" src="assets/runtime-icon.svg" alt="premiere-icon" />
+                        <div class="col-9 movie-details">
+                            <div class="movie-details-label">Runtime:</div>
+                            <span>{{movieDetails.Runtime}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row plot-info">
+                <span>{{movieDetails.Plot}}</span>
+            </div>
+            <div class="more-details">
+                <div>Director</div>
+                <div>{{movieDetails.Director}}</div>
+                <div>Writers</div>
+                <div>{{movieDetails.Writer}}</div>
+                <div>Genre</div>
+                <div>{{movieDetails.Genre}}</div>
+                <div>Type</div>
+                <div>{{movieDetails.Type | titlecase}}</div>
+                <div>Metascore</div>
+                <div>{{movieDetails.Metascore}}</div>
+                <div>IMDB Rating</div>
+                <div>{{movieDetails.imdbRating}}</div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <img class="col-12" [src]="movieDetails.Poster" alt="moviesPoster" />
+        </div>
+    </div>
+</div>
