@@ -9,7 +9,7 @@
         "{options.outputPath}"
       ],
       "options": {
-        "outputPath": "dist/apps/omdbmovies",
+        "outputPath": "docs",
         "index": "apps/omdbmovies/src/index.html",
         "main": "apps/omdbmovies/src/main.ts",
         "polyfills": "apps/omdbmovies/src/polyfills.ts",
