@@ -8,6 +8,7 @@
     "start": "nx serve",
     "build": "nx build",
     "test": "nx test",
+    "omdb:serve": "nx run omdbmovies:serve",
     "omdb:lint": "nx run omdbmovies:lint",
     "omdb:build:dev": "nx run omdbmovies:build:development",
     "omdb:build:release": "nx run omdbmovies:build"
