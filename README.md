@@ -1,6 +1,3 @@
-## General info
-This project is simple Lorem ipsum dolor generator.
-
 ## Demo
 
 Demo is available on 
