@@ -1,7 +1,7 @@
 ## Demo
 
 Demo is available on 
-https://tomorovik.github.io/OMDBMovies/movies
+https://tomorovik.github.io/OMDBMovies
 
 
 ## Technologies
